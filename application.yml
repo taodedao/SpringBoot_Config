@@ -1,0 +1,11 @@
+server:
+  port: 808
+  context-path: /
+
+eureka:
+  client:
+    register-with-eureka: false #false 由于注册中心的职责就是维护服务实例，它并不需要去检索服务，所以也设置为false
+    fetch-registry: true #要不要去注册中心获取其他服务的地址
+    registry-fetch-interval-seconds: 8 #表示eureka client间隔多久去拉取服务器注册信息,默认为30秒
+    service-url:
+      defaultZone: http://david:123456@eureka2001.ekugame.com/eureka/,http://david:123456@eureka2002.ekugame.com/eureka/,http://david:123456@eureka2003.ekugame.com/eureka/
